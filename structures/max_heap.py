@@ -22,6 +22,7 @@ class MaxHeap:
         # Take note of the max val (heap root), del root
         to_return = self._array[0]
         self.del_index(0)
+        return to_return
 
     def del_index(self, index):
         if index == len(self._array) - 1:
