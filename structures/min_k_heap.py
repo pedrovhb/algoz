@@ -6,6 +6,7 @@ class MinKHeap:
     def __init__(self, max_k):
         self._array = []
         self.max_k = max_k
+        self._max_array_size = 2 ** self.max_k
 
     def add(self, val):
         self._array.append(val)
@@ -19,8 +20,8 @@ class MinKHeap:
             else:
                 break
 
-        if len(self._array) > 2 ** self.max_k:
-            self._array = self._array[:2 ** self.max_k]
+        if len(self._array) > self._max_array_size:
+            self._array.pop()
 
     def low(self):
         return self._array[0]
